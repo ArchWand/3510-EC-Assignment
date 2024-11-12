@@ -19,14 +19,14 @@ class Solutions:
     #
     def maxPackages(packages: List[Tuple[int, int]]) -> int:
         return -1
-    
+
     # Problem 3: Building Blocks
     # Explanation and Runtime:
     #
     #
     def minSwap(nums1: List[int], nums2: List[int]) -> int:
         return -1
-    
+
     # Problem 4: Modular Two Sum 
     # Explanation and Runtime:
     #
@@ -40,42 +40,42 @@ class Solutions:
     #
     def maximumMagicPathPower(energies: List[int], edges: List[List[int]], maxTime: int) -> int:
         return -1
-    
+
     # Problem 6: Divide the Harvest
     # Explanation and Runtime:
     #
     #
     def divideTheHarvest(quantity: List[int], k: int) -> int:
         return -1
-      
+
     # Problem 7: Coloring Sidewalks 
     # Explanation and Runtime:
     #
     #
     def coloringSidewalks(time: List[int]) -> int:
         return -1
-    
+
     # Problem 8: Chemical Concoctions
     # Explanation and Runtime:
     #
     #
     def chemicalConcoctions(formulas: List[str]) -> str:
         return ""
-    
+
     # Problem 9: Maximum Sum of Non-Adjacent Subsequences
     # Explanation and Runtime:
     #
     #
     def maxNonAdjSum(A: List[int]) -> int:
         return -1
-    
+
     # Problem 10: DigitGPT
     # Explanation and Runtime:
     #
     #
     def reviveStrings(n: int, ticket: str) -> bool:
         return False
-    
+
     # Problem 11: Building a Brick Wall
     # Explanation and Runtime:
     #
@@ -89,7 +89,7 @@ class Solutions:
     #
     def findNeededBridges(n: int, edges: List[Tuple[int, int]]) -> List[Tuple[int, int]]:
         return []
-    
+
     # Problem 13: Search Engineer 
     # Explanation and Runtime:
     #

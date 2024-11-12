@@ -16,7 +16,7 @@ public:
     /* Explanation and Runtime:
      * 
      */
-	static int realEstatePrices(const std::vector<int>& values) {
+    static int realEstatePrices(const std::vector<int>& values) {
         return -1;
     }
 
@@ -43,7 +43,7 @@ public:
     static int modTwoSum(const std::vector<int>& A, int k) {
         return -1;
     }
-  
+
     // Problem 5: Maximum Magic Path Power 
     /* Explanation and Runtime:
      * 
@@ -51,7 +51,7 @@ public:
     static int maximumMagicPathPower(const std::vector<int>& energies, const std::vector<std::vector<int>>& edges, int maxTime) {
         return -1;
     }
-  
+
     // Problem 6: Divide the Harvest
     /* Explanation and Runtime:
      * 
@@ -59,7 +59,7 @@ public:
     static int divideTheHarvest(const std::vector<int>& quantity, int k) {
         return -1;
     }
-  
+
     // Problem 7: Coloring Sidewalks 
     /* Explanation and Runtime:
      * 
@@ -99,7 +99,7 @@ public:
     static int buildBrickWall(const std::vector<int>& B, int l) {
         return -1;
     }
-    
+
     // Problem 12: Archipelagos
     /* Explanation and Runtime:
      * 
@@ -108,14 +108,14 @@ public:
         return {};
     }
 
-	// Problem 13: Search Engineer
+    // Problem 13: Search Engineer
     /* Explanation and Runtime:
      * 
      */
-	static int numDistinct(const std::string &text, const std::string pattern) {
-		return -1;
-	}
-    
+    static int numDistinct(const std::string &text, const std::string pattern) {
+        return -1;
+    }
+
     // Problem 14: Buzz's Bees
     /* Explanation and Runtime:
      * 

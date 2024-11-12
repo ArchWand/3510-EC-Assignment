@@ -7,7 +7,7 @@ public class Solutions {
     /* Explanation and Runtime:
      * 
      */
-	public static int realEstatePrices(int[] values) {
+    public static int realEstatePrices(int[] values) {
         return -1;
     }
 
@@ -34,7 +34,7 @@ public class Solutions {
     public static int modTwoSum(int[] A, int k) {
         return -1;
     }
-  
+
     // Problem 5: Maximum Magic Path Power
     /* Explanation and Runtime:
      * 
@@ -42,7 +42,7 @@ public class Solutions {
     public static int maximumMagicPathPower(List<Integer> energies, List<List<Integer>> edges, int maxTime) {
         return -1;
     }
-  
+
     // Problem 6: Divide the Harvest
     /* Explanation and Runtime:
      * 
@@ -50,7 +50,7 @@ public class Solutions {
     public static int divideTheHarvest(int[] quantity, int k) {
         return -1;
     }
-  
+
     // Problem 7: Coloring Sidewalks
     /* Explanation and Runtime:
      * 
@@ -58,7 +58,7 @@ public class Solutions {
     public static int coloringSidewalks(int[][] time) { 
         return -1;
     }
-  
+
     // Problem 8: Chemical Concoctions
     /* Explanation and Runtime:
      * 
@@ -90,7 +90,7 @@ public class Solutions {
     public static int countWaysToBuildWall(int[] B, int l) {
         return -1;
     }
-    
+
     // Problem 12: Archipelagos
     /* Explanation and Runtime:
      * 
@@ -103,10 +103,10 @@ public class Solutions {
     /* Explanation and Runtime:
      * 
      */
-	public static int numDistinct(String text, String pattern) {
-		return -1;
-	}
-    
+    public static int numDistinct(String text, String pattern) {
+        return -1;
+    }
+
     // Problem 14: Buzz's Bees
     /* Explanation and Runtime:
      * 
