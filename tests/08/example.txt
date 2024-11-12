@@ -1,0 +1,10 @@
+4
+bz
+buzz
+fizz
+fz
+zi
+
+2
+bfizu
+bifzu
