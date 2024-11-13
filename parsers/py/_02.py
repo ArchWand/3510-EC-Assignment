@@ -2,6 +2,8 @@ def parser(f):
 	n = int(f.readline())
 	packages = [ [int(i) for i in f.readline().split()] for _ in range(n) ]
 
+	for l in packages:
+		assert(len(l) == 2)
 	assert(f.readline() == "\n")
 
 	cert = int(f.readline())

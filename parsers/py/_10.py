@@ -1,10 +1,13 @@
 def parser(f):
 	n = int(f.readline())
-	ticket = f.readline()
+	ticket = f.readline().strip()
 
+	assert(n == len(ticket))
 	assert(f.readline() == "\n")
 
-	cert = bool(f.readline())
+	b = f.readline().strip()
+	assert(b == "true" or b == "false")
+	cert = bool(b)
 
 	return cert, (n, ticket,)
 
