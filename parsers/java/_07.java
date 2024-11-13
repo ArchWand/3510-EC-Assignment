@@ -1,21 +1,21 @@
+import java.util.List;
 import java.util.Scanner;
 
-public class _04 implements Parser {
+public class _07 implements Parser {
     public Object[] parser(Scanner f) {
         int n = f.nextInt();
-        int k = f.nextInt();
-        int[] A = Parser.parse_arr_int(f, n);
+        int[][] time = Parser.parse_arrarr_int(f, n, 3);
 
         assert(f.nextLine() == "");
         assert(f.nextLine() == "");
 
         int cert = f.nextInt();
 
-        return Parser.ret_parser(cert, A, k);
+        return Parser.ret_parser(cert, (Object)time);
     }
 
     public Object run(Object[] input) {
-        return Solutions.modTwoSum((int[])input[0], (int)input[1]);
+        return Solutions.coloringSidewalks((int[][])input[0]);
     }
 
     public boolean verifier(Object cert, Object ans) {
@@ -25,16 +25,14 @@ public class _04 implements Parser {
     public void error(Object cert, Object[] input, Object ans) {
         System.out.println(String.format(
             "Input:\n" +
-            "A = %s\n" +
-            "k = %s\n" +
+            "time = %s\n" +
             "\n" +
             "Expected:\n" +
             "%d\n" +
             "\n" +
             "Actual:\n" +
             "%d\n",
-            Parser.print_arr((int[])input[0]),
-            (int)input[1],
+            Parser.print_arrarr((int[][])input[0]),
             (int)cert,
             (int)ans
         ));

@@ -1,21 +1,21 @@
 import java.util.Scanner;
 
-public class _04 implements Parser {
+public class _06 implements Parser {
     public Object[] parser(Scanner f) {
         int n = f.nextInt();
         int k = f.nextInt();
-        int[] A = Parser.parse_arr_int(f, n);
+        int[] quantity = Parser.parse_arr_int(f, n);
 
         assert(f.nextLine() == "");
         assert(f.nextLine() == "");
 
         int cert = f.nextInt();
 
-        return Parser.ret_parser(cert, A, k);
+        return Parser.ret_parser(cert, quantity, k);
     }
 
     public Object run(Object[] input) {
-        return Solutions.modTwoSum((int[])input[0], (int)input[1]);
+        return Solutions.divideTheHarvest((int[])input[0], (int)input[1]);
     }
 
     public boolean verifier(Object cert, Object ans) {
@@ -25,7 +25,7 @@ public class _04 implements Parser {
     public void error(Object cert, Object[] input, Object ans) {
         System.out.println(String.format(
             "Input:\n" +
-            "A = %s\n" +
+            "quantity = %s\n" +
             "k = %s\n" +
             "\n" +
             "Expected:\n" +

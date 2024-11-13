@@ -30,8 +30,7 @@ public class _02 implements Parser {
             "%d\n" +
             "\n" +
             "Actual:\n" +
-            "%d\n" +
-            "\n",
+            "%d\n",
             Parser.print_arrarr((int[][])input[0]),
             (int)cert,
             (int)ans

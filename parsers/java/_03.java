@@ -32,8 +32,7 @@ public class _03 implements Parser {
             "%d\n" +
             "\n" +
             "Actual:\n" +
-            "%d\n" +
-            "\n",
+            "%d\n",
             Parser.print_arr((int[])input[0]),
             Parser.print_arr((int[])input[1]),
             (int)cert,

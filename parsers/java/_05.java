@@ -1,21 +1,24 @@
+import java.util.List;
 import java.util.Scanner;
 
-public class _04 implements Parser {
+public class _05 implements Parser {
     public Object[] parser(Scanner f) {
         int n = f.nextInt();
-        int k = f.nextInt();
-        int[] A = Parser.parse_arr_int(f, n);
+        int m = f.nextInt();
+        int maxTime = f.nextInt();
+        List<Integer> energies = Parser.parse_list_int(f, n);
+        List<List<Integer>> edges = Parser.parse_listlist_int(f, m, 3);
 
         assert(f.nextLine() == "");
         assert(f.nextLine() == "");
 
         int cert = f.nextInt();
 
-        return Parser.ret_parser(cert, A, k);
+        return Parser.ret_parser(cert, energies, edges, maxTime);
     }
 
     public Object run(Object[] input) {
-        return Solutions.modTwoSum((int[])input[0], (int)input[1]);
+        return Solutions.maximumMagicPathPower((List<Integer>)input[0], (List<List<Integer>>)input[1], (int)input[2]);
     }
 
     public boolean verifier(Object cert, Object ans) {
@@ -25,16 +28,18 @@ public class _04 implements Parser {
     public void error(Object cert, Object[] input, Object ans) {
         System.out.println(String.format(
             "Input:\n" +
-            "A = %s\n" +
-            "k = %s\n" +
+            "energies = %s\n" +
+            "edges = %s\n" +
+            "maxTime = %d\n" +
             "\n" +
             "Expected:\n" +
             "%d\n" +
             "\n" +
             "Actual:\n" +
             "%d\n",
-            Parser.print_arr((int[])input[0]),
-            (int)input[1],
+            Parser.print_list((List<Integer>)input[0]),
+            Parser.print_listlist((List<List<Integer>>)input[1]),
+            (int)input[2],
             (int)cert,
             (int)ans
         ));

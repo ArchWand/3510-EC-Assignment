@@ -10,6 +10,16 @@ using namespace std;
 #include "_02.h"
 #include "_03.h"
 #include "_04.h"
+#include "_05.h"
+#include "_06.h"
+#include "_07.h"
+#include "_08.h"
+#include "_09.h"
+#include "_10.h"
+#include "_11.h"
+#include "_12.h"
+#include "_13.h"
+#include "_14.h"
 
 const string TESTS = "./tests";
 string tests_dir(string num) { return TESTS + "/" + num; }
@@ -22,16 +32,16 @@ Parser *problems[] = { nullptr,
 	new _02,
 	new _03,
 	new _04,
-	nullptr,
-	nullptr,
-	nullptr,
-	nullptr,
-	nullptr,
-	nullptr,
-	nullptr,
-	nullptr,
-	nullptr,
-	nullptr,
+	new _05,
+	new _06,
+	new _07,
+	new _08,
+	new _09,
+	new _10,
+	new _11,
+	new _12,
+	new _13,
+	new _14,
 };
 
 
