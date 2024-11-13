@@ -13,7 +13,7 @@ public class run {
 
     static Parser[] problems = { null,
         null,
-        null,
+        new _02(),
         null,
         new _04(),
         null,
