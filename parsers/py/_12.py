@@ -15,7 +15,7 @@ def parser(f):
 	return cert, (n, E,)
 
 def verifier(cert, ans):
-	return cert == ans
+	return sorted(cert) == sorted(ans)
 
 def error(cert, input, ans):
 	print("Input:")

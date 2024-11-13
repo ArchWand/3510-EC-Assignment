@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Scanner;
 
@@ -22,7 +23,26 @@ public class _12 implements Parser {
     }
 
     public boolean verifier(Object cert, Object ans) {
-        return (List<ArrayList<Integer>>)cert == (List<ArrayList<Integer>>)ans;
+        List<ArrayList<Integer>> c = (List<ArrayList<Integer>>)cert;
+        List<ArrayList<Integer>> a = (List<ArrayList<Integer>>)ans;
+
+        Comparator<ArrayList<Integer>> comp = new Comparator<ArrayList<Integer>>() {
+            @Override
+            public int compare(ArrayList<Integer> list1, ArrayList<Integer> list2) {
+                int minLength = Math.min(list1.size(), list2.size());
+                for (int i = 0; i < minLength; i++) {
+                    int comparison = Integer.compare(list1.get(i), list2.get(i));
+                    if (comparison != 0) {
+                        return comparison;
+                    }
+                }
+                return Integer.compare(list1.size(), list2.size());
+            }
+        };
+
+        c.sort(comp);
+        a.sort(comp);
+        return c.equals(a);
     }
 
     public void error(Object cert, Object[] input, Object ans) {

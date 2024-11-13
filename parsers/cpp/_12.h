@@ -1,4 +1,5 @@
 #include "parser.h"
+#include <algorithm>
 #include <cstdio>
 #include <format>
 #include <sstream>
@@ -23,6 +24,12 @@ public:
 		vector<pair<int, int>> ans = Solutions::findNeededBridges(n, E);
 
 		// Verify
+		auto comp = [](const std::pair<int, int>& a, const std::pair<int, int>& b) {
+			if (a.first == b.first) { return a.second < b.second; }
+			return a.first < b.first;
+		};
+		sort(cert.begin(), cert.end(), comp);
+		sort(ans.begin(), ans.end(), comp);
 		bool res = (cert == ans);
 
 		// Handle error
