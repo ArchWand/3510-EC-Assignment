@@ -2,7 +2,7 @@ BIN=runcpp
 JAVADIR=parsers/java
 
 ${BIN}: parsers/cpp/*.cpp parsers/cpp/*.h src/Solutions.cpp
-	g++ -std=c++17 -o ${BIN} parsers/cpp/run.cpp src/Solutions.cpp -fsanitize=address -g
+	g++ -std=c++17 -g -o ${BIN} parsers/cpp/run.cpp src/Solutions.cpp
 
 .PHONY: java
 java: parsers/java/run.class

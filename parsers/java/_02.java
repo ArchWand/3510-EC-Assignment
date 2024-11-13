@@ -3,18 +3,14 @@ import java.util.Scanner;
 public class _02 implements Parser {
     public Object[] parser(Scanner f) {
         int n = f.nextInt();
-        int[][] packages = new int[n][2];
-        for (int i = 0; i < n; i++) {
-            packages[i][0] = f.nextInt();
-            packages[i][1] = f.nextInt();
-        }
+        int[][] packages = Parser.parse_arrarr_int(f, n, 2);
 
         assert(f.nextLine() == "");
         assert(f.nextLine() == "");
 
         int cert = f.nextInt();
 
-        return new Object[]{cert, new Object[]{packages}};
+        return Parser.ret_parser(cert, (Object)packages);
     }
 
     public Object run(Object[] input) {
@@ -26,12 +22,6 @@ public class _02 implements Parser {
     }
 
     public void error(Object cert, Object[] input, Object ans) {
-        String packages = "[ ";
-        for (int[] x : (int[][])input[0]) {
-            packages += "[" + x[0] + ", " + x[1] + "], ";
-        }
-        packages += "]";
-
         System.out.println(String.format(
             "Input:\n" +
             "packages = %s\n" +
@@ -41,8 +31,11 @@ public class _02 implements Parser {
             "\n" +
             "Actual:\n" +
             "%d\n" +
-            "\n"
-        , packages, (int)cert, (int)ans));
+            "\n",
+            Parser.print_arrarr((int[][])input[0]),
+            (int)cert,
+            (int)ans
+        ));
     }
 
 }

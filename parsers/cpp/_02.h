@@ -12,13 +12,7 @@ public:
 		int n;
 		f >> n;
 		vector<vector<int>> packages;
-		for (int i = 0; i < n; i++) {
-			int a, b;
-			f >> a >> b;
-			packages.emplace_back(2);
-			packages.back()[0] = a;
-			packages.back()[1] = b;
-		}
+		parse_push_back(f, packages, n, 2);
 
 		int cert;
 		f >> cert;
@@ -32,16 +26,9 @@ public:
 		// Handle error
 		string error = "";
 		if (!res) {
-			stringstream ss_packages;
-			ss_packages << "[ ";
-			for (vector<int> x : packages) {
-				ss_packages << "[" << x[0] << ", " << x[1] << "], ";
-			}
-			ss_packages << "]";
-
 			stringstream ss;
 			ss << "Input:\n"
-				<< "packages = " << ss_packages.str() << "\n"
+				<< "packages = " << print_vecvec(packages) << "\n"
 				<< "\n"
 				<< "Expected:\n"
 				<< cert << "\n"

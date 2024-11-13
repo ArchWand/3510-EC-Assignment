@@ -12,18 +12,13 @@ public:
 		int n, k;
 		f >> n >> k;
 		vector<int> A;
-		for (int i = 0; i < n; i++) {
-			int x;
-			f >> x;
-			A.push_back(x);
-		}
+		parse_push_back(f, A, n);
 
 		int cert;
 		f >> cert;
 
 		// Check solution
-		vector<int> const &const_A = A;
-		int ans = Solutions::modTwoSum(const_A, k);
+		int ans = Solutions::modTwoSum(A, k);
 
 		// Verify
 		bool res = (cert == ans);
@@ -31,15 +26,9 @@ public:
 		// Handle error
 		string error = "";
 		if (!res) {
-			string str_A = "[ ";
-			for (int x : A) {
-				str_A += to_string(x) + " ";
-			}
-			str_A += "]";
-
 			stringstream ss;
 			ss << "Input:\n"
-				<< "A = " << str_A << "\n"
+				<< "A = " << print_vec(A) << "\n"
 				<< "k = " << k << "\n"
 				<< "\n"
 				<< "Expected:\n"
