@@ -13,6 +13,5 @@ clean:
 	rm ${BIN} parsers/java/*.class
 
 ${JAVADIR}/run.class: ${JAVADIR}/*.java src/Solutions.java
-	cp src/Solutions.java ${JAVADIR}/Solutions.java
 	cd ${JAVADIR} && javac run.java
 
