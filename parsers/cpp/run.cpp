@@ -6,7 +6,9 @@
 namespace fs = std::filesystem;
 using namespace std;
 
+#include "_01.h"
 #include "_02.h"
+#include "_03.h"
 #include "_04.h"
 
 const string TESTS = "./tests";
@@ -16,9 +18,9 @@ string tests_path(string num, string test_case) {
 }
 
 Parser *problems[] = { nullptr,
-	nullptr,
+	new _01,
 	new _02,
-	nullptr,
+	new _03,
 	new _04,
 	nullptr,
 	nullptr,

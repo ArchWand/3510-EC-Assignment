@@ -12,9 +12,9 @@ public class run {
     }
 
     static Parser[] problems = { null,
-        null,
+        new _01(),
         new _02(),
-        null,
+        new _03(),
         new _04(),
         null,
         null,
