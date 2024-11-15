@@ -6,6 +6,7 @@ def parser(f):
 	assert(f.readline() == "\n")
 
 	cert = int(f.readline())
+	assert(f.readline().strip() == "")
 
 	return cert, (blocks1, blocks2,)
 
