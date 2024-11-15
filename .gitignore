@@ -2,3 +2,5 @@
 __pycache__
 pyrightconfig.json
 runcpp
+parsers/java/run.jar
+run.jar
