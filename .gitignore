@@ -4,3 +4,6 @@ pyrightconfig.json
 runcpp
 parsers/java/run.jar
 run.jar
+src/Solutions.cpp
+src/Solutions.java
+src/Solutions.py
