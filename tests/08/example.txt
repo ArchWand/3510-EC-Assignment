@@ -5,6 +5,7 @@ fizz
 fz
 zi
 
-2
+3
 bfizu
 bifzu
+ibfzu
