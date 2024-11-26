@@ -7,10 +7,13 @@ def parser(f):
 		assert(c == '*' or ('0' <= c and c <= '9'))
 	assert(f.readline() == "\n")
 
-	b = f.readline().strip()
-	assert(b == "true" or b == "false")
+	cert = f.readline().strip()
+	assert(cert == "true" or cert == "false")
 	assert(f.readline().strip() == "")
-	cert = bool(b)
+	if cert == "true":
+		cert = True
+	else:
+		cert = False
 
 	return cert, (n, ticket,)
 
