@@ -50,7 +50,7 @@ def run_tests(tests: list[str]):
         print(f"Testing problem {prob}")
 
         # Try every test case
-        for test_case in os.listdir(tests_dir(prob)):
+        for test_case in sorted(os.listdir(tests_dir(prob))):
             test_case = os.fsdecode(test_case)
 
             with open(tests_path(prob, test_case)) as f:
