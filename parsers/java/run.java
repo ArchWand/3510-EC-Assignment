@@ -50,8 +50,9 @@ public class run {
             System.out.println("Testing problem " + prob);
 
             // Try every test case
-            File dir = new File(tests_dir(prob));
-            for (File file : dir.listFiles()) {
+            File[] dir = new File(tests_dir(prob)).listFiles();
+            Arrays.sort(dir);
+            for (File file : dir) {
                 String test_case = file.getName();
                 Scanner f;
                 try {

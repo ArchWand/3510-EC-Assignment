@@ -37,7 +37,7 @@ python3 run.py
 
 ## Test Cases
 
-Please make a pull request with any test cases you add; any help is greatly appreciated. The test cases live in `./tests`; there is a directory for each problem, and each test case is a text file in the corresponding problem directory. The following section details the input format of each test case.
+Please make a pull request with any test cases you add; any help is greatly appreciated. The test cases live in `./tests`; there is a directory for each problem, and each test case is a text file in the corresponding problem directory. The test cases are run in lexicographic order. The following section details the input format of each test case.
 
 #### Problem 1
 

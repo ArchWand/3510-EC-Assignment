@@ -1,8 +1,8 @@
-#include <cstddef>
 #include <iostream>
 #include <fstream>
 #include <string>
 #include <filesystem>
+#include <set>
 namespace fs = std::filesystem;
 using namespace std;
 
@@ -67,9 +67,13 @@ void run_tests(vector<string> tests) {
 		cout << "Testing problem " << prob << endl;
 
 		// Try every test case
+		set<fs::path> dir;
 		for (const fs::directory_entry &entry : fs::directory_iterator(tests_dir(prob))) {
-			string test_case = entry.path().filename();
-			ifstream f(entry.path());
+			dir.insert(entry.path());
+		}
+		for (const fs::path &filepath : dir) {
+			string test_case = filepath.filename();
+			ifstream f(filepath);
 			// Parse the test case file, run the solution, and verify the answer
 			string err = problems[stoi(prob)]->run(f);
 			if (err == "") {

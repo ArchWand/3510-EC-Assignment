@@ -3,11 +3,15 @@ JAR=run.jar
 JAVADIR=parsers/java
 
 ${BIN}: parsers/cpp/*.cpp parsers/cpp/*.h src/Solutions.cpp
-	g++ -std=c++17 -g -o ${BIN} parsers/cpp/run.cpp src/Solutions.cpp
+	g++ -std=c++17 -o ${BIN} parsers/cpp/run.cpp src/Solutions.cpp -O2
+
+.PHONY: debug
+debug:
+	g++ -std=c++17 -g -o ${BIN} parsers/cpp/run.cpp src/Solutions.cpp -g -fsanitize=address
 
 .PHONY: clean
 clean:
-	@-rm ${BIN} ${JAR} ${JAVADIR}/*.class ${JAVADIR}/${JAR}
+	rm -f ${BIN} ${JAR} ${JAVADIR}/*.class ${JAVADIR}/${JAR}
 
 .PHONY: jar
 jar: ${JAR}
