@@ -7,6 +7,9 @@ def parser(f):
 	cert = int(f.readline())
 	assert(f.readline().strip() == "")
 
+	# We may assume that 1 <= k <= len(quantity)
+	assert(1 <= k and k <= len(quantity))
+
 	return cert, (quantity, k,)
 
 def verifier(cert, ans):

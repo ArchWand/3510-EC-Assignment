@@ -73,7 +73,10 @@ void run_tests(vector<string> tests) {
 		}
 		for (const fs::path &filepath : dir) {
 			string test_case = filepath.filename();
+			// Ignore hidden test cases
+			if (test_case[0] == '.') { continue; }
 			ifstream f(filepath);
+
 			// Parse the test case file, run the solution, and verify the answer
 			string err = problems[stoi(prob)]->run(f);
 			if (err == "") {

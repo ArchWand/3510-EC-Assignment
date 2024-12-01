@@ -54,6 +54,9 @@ public class run {
             Arrays.sort(dir);
             for (File file : dir) {
                 String test_case = file.getName();
+                // Ignore hidden test cases
+                if (test_case.charAt(0) == '.') { continue; }
+
                 Scanner f;
                 try {
                     f = new Scanner(file);

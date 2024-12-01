@@ -52,6 +52,9 @@ def run_tests(tests: list[str]):
         # Try every test case
         for test_case in sorted(os.listdir(tests_dir(prob))):
             test_case = os.fsdecode(test_case)
+            # Ignore hidden test cases
+            if (test_case[0] == '.'):
+                continue
 
             with open(tests_path(prob, test_case)) as f:
                 # Parse the test case file, run the solution, and verify the answer
