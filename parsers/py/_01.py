@@ -7,6 +7,9 @@ def parser(f):
 	cert = int(f.readline())
 	assert(f.readline().strip() == "")
 
+	for x in values:
+		assert(x > 0)
+
 	return cert, (values,)
 
 def verifier(cert, ans):
