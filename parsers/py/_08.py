@@ -14,6 +14,18 @@ def parser(f):
             assert('a' <= c and c <= 'z')
     assert(f.readline().strip() == "")
 
+    # Assert that the ordering exists
+    for x, y in zip(formulas[:-1], formulas [1:]):
+        # Find common prefix
+        prefix = x
+        while not y.startswith(prefix):
+            prefix = prefix[:-1]
+            if not prefix:
+                break;
+        assert((len(prefix) < len(x) and len(prefix) < len(y))
+            or (y.startswith(x) and len(y) > len(x)) # Condition 2
+        )
+
     return cert, (formulas,)
 
 def verifier(cert, ans):
