@@ -16,11 +16,11 @@ cleanjava:
 	rm -f ${JAR} ${JAVADIR}/*.class ${JAVADIR}/${JAR}
 
 .PHONY: jar
-jar: ${JAR}
-${JAR}: ${JAVADIR}/run.class
+jar: cleanjava ${JAR}
+${JAR}: ${JAVADIR}/run.class cleanjava
 	cd ${JAVADIR} && jar -cvfe ${JAR} run *.class
 	cp -f ${JAVADIR}/${JAR} .
 
-${JAVADIR}/run.class: ${JAVADIR}/*.java src/Solutions.java cleanjava
+${JAVADIR}/run.class: ${JAVADIR}/*.java src/Solutions.java
 	cd ${JAVADIR} && javac run.java
 
