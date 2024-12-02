@@ -1,8 +1,8 @@
-#include <cstddef>
 #include <iostream>
 #include <fstream>
 #include <string>
 #include <filesystem>
+#include <set>
 namespace fs = std::filesystem;
 using namespace std;
 
@@ -46,7 +46,10 @@ Parser *problems[] = { nullptr,
 
 
 #define GREEN "\033[92m"
+#define YELLOW "\033[33m"
 #define RED "\033[91m"
+#define BOLD "\033[1m"
+#define UNDERLINE "\033[4m"
 #define ENDC "\033[0m"
 
 void print_help() {
@@ -64,12 +67,19 @@ void print_help() {
 void run_tests(vector<string> tests) {
 	// Loop over every problem we want to test
 	for (string prob : tests) {
-		cout << "Testing problem " << prob << endl;
+		printf("Testing %sproblem %s%s%s\n", YELLOW, BOLD, prob.c_str(), ENDC);
 
 		// Try every test case
+		set<fs::path> dir;
 		for (const fs::directory_entry &entry : fs::directory_iterator(tests_dir(prob))) {
-			string test_case = entry.path().filename();
-			ifstream f(entry.path());
+			dir.insert(entry.path());
+		}
+		for (const fs::path &filepath : dir) {
+			string test_case = filepath.filename();
+			// Ignore hidden test cases
+			if (test_case[0] == '.') { continue; }
+			ifstream f(filepath);
+
 			// Parse the test case file, run the solution, and verify the answer
 			string err = problems[stoi(prob)]->run(f);
 			if (err == "") {

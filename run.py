@@ -38,27 +38,42 @@ def print_help():
     print("  -t   Test only specific problems. For example, to test 01, 04, and 12:")
     print("           py run.py -t 01 04 12")
     print("")
+    print("  -v   Validate that all tests are correct. Special mode for test writers.")
+    print("")
 
 GREEN = '\033[92m'
+YELLOW = '\033[33m'
 RED = '\033[91m'
+BOLD = '\033[1m'
+UNDERLINE = '\033[4m'
 ENDC = '\033[0m'
+
+validate = False
 
 # Run all tests listed in the given list
 def run_tests(tests: list[str]):
     # Loop over every problem we want to test
     for prob in tests:
-        print(f"Testing problem {prob}")
+        print(f"Testing {YELLOW}problem {BOLD}{prob}{ENDC}")
 
         # Try every test case
-        for test_case in os.listdir(tests_dir(prob)):
+        for test_case in sorted(os.listdir(tests_dir(prob))):
             test_case = os.fsdecode(test_case)
+            # Ignore hidden test cases
+            if (test_case[0] == '.'):
+                continue
 
             with open(tests_path(prob, test_case)) as f:
+                if validate:
+                    print(f"Running {test_case}")
+
                 # Parse the test case file, run the solution, and verify the answer
                 cert, test_in = parse[prob](f)
                 ans = problems[prob](*test_in)
                 res = verify[prob](cert, ans)
 
+                if validate:
+                    continue
                 # Say whether the answer was right
                 if res:
                     print(f"Test case {test_case} {GREEN}passed{ENDC}")
@@ -77,6 +92,8 @@ if __name__ == "__main__":
                 exit()
             case "-t":
                 tests = [ s for s in sys.argv[2:] ]
+            case "-v":
+                validate = True
             case _:
                 print(f"Invalid flag {sys.argv[1]}, ignoring.")
     run_tests(tests)
