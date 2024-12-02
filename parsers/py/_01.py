@@ -7,8 +7,10 @@ def parser(f):
     cert = int(f.readline())
     assert(f.readline().strip() == "")
 
+    # Values can be assumed to be non-negative:
+    # https://edstem.org/us/courses/63506/discussion/5702458
     for x in values:
-        assert(x > 0)
+        assert(x >= 0)
 
     return cert, (values,)
 
