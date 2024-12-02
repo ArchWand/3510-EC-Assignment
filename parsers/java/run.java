@@ -68,8 +68,6 @@ public class run {
                     return;
                 }
 
-                System.out.print("Running " + test_case + "\r");
-                System.out.flush();
                 // Parse the test case file, run the solution, and verify the answer
                 Parser p = problems[Integer.valueOf(prob)];
                 Object[] ret = p.parser(f);

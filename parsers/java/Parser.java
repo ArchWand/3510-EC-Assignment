@@ -90,6 +90,10 @@ public interface Parser {
 
     static Set<String> parse_set_string(Scanner f, int n) {
         Set<String> v = new HashSet<>();
+        if (n == 0) {
+            v.add("");
+            return v;
+        }
         for (int i = 0; i < n; i++) {
             v.add(f.nextLine());
         }
