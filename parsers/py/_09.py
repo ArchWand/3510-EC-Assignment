@@ -1,5 +1,6 @@
 def parser(f):
     n = int(f.readline())
+    assert(n > 0)
     nums = [ int(f.readline()) for _ in range(n) ]
 
     assert(f.readline() == "\n")

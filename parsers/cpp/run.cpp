@@ -46,7 +46,10 @@ Parser *problems[] = { nullptr,
 
 
 #define GREEN "\033[92m"
+#define YELLOW "\033[33m"
 #define RED "\033[91m"
+#define BOLD "\033[1m"
+#define UNDERLINE "\033[4m"
 #define ENDC "\033[0m"
 
 void print_help() {
@@ -64,7 +67,7 @@ void print_help() {
 void run_tests(vector<string> tests) {
 	// Loop over every problem we want to test
 	for (string prob : tests) {
-		cout << "Testing problem " << prob << endl;
+		printf("Testing %sproblem %s%s%s\n", YELLOW, BOLD, prob.c_str(), ENDC);
 
 		// Try every test case
 		set<fs::path> dir;
@@ -77,6 +80,8 @@ void run_tests(vector<string> tests) {
 			if (test_case[0] == '.') { continue; }
 			ifstream f(filepath);
 
+			printf("Running %s\r", test_case.c_str());
+			fflush(stdout);
 			// Parse the test case file, run the solution, and verify the answer
 			string err = problems[stoi(prob)]->run(f);
 			if (err == "") {
