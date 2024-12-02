@@ -55,7 +55,6 @@ static string print_set(unordered_set<string> v) {
 	ss << "{";
 	auto it = v.begin();
 	while (it != v.end()) {
-		cout << *it << endl;
 		ss << *it;
 		it++;
 		if (it == v.end()) {
