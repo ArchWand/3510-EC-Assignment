@@ -29,7 +29,10 @@ public class run {
     };
 
     static final String GREEN = "\033[92m";
+    static final String YELLOW = "\033[33m";
     static final String RED = "\033[91m";
+    static final String BOLD = "\033[1m";
+    static final String UNDERLINE = "\033[4m";
     static final String ENDC = "\033[0m";
 
     public static void print_help() {
@@ -47,7 +50,7 @@ public class run {
     public static void run_tests(String[] tests) {
         // Loop over every problem we want to test
         for (String prob : tests) {
-            System.out.println("Testing problem " + prob);
+            System.out.println("Testing " + YELLOW + "problem " + BOLD + prob + ENDC);
 
             // Try every test case
             File[] dir = new File(tests_dir(prob)).listFiles();
@@ -65,6 +68,8 @@ public class run {
                     return;
                 }
 
+                System.out.print("Running " + test_case + "\r");
+                System.out.flush();
                 // Parse the test case file, run the solution, and verify the answer
                 Parser p = problems[Integer.valueOf(prob)];
                 Object[] ret = p.parser(f);
