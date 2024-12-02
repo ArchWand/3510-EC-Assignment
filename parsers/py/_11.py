@@ -7,6 +7,9 @@ def parser(f):
     cert = int(f.readline())
     assert(f.readline().strip() == "")
 
+    # Brick lengths are unique
+    assert(len(B) == len(set(B)))
+
     return cert, (B, l,)
 
 def verifier(cert, ans):
