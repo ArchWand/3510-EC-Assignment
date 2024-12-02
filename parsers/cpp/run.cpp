@@ -80,8 +80,6 @@ void run_tests(vector<string> tests) {
 			if (test_case[0] == '.') { continue; }
 			ifstream f(filepath);
 
-			printf("Running %s\r", test_case.c_str());
-			fflush(stdout);
 			// Parse the test case file, run the solution, and verify the answer
 			string err = problems[stoi(prob)]->run(f);
 			if (err == "") {

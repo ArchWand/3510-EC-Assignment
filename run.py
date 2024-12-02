@@ -63,10 +63,9 @@ def run_tests(tests: list[str]):
             if (test_case[0] == '.'):
                 continue
 
-            print(f"Running {test_case}", end='\r')
             with open(tests_path(prob, test_case)) as f:
                 if validate:
-                    print()
+                    print(f"Running {test_case}")
 
                 # Parse the test case file, run the solution, and verify the answer
                 cert, test_in = parse[prob](f)

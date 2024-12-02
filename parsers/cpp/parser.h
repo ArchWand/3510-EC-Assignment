@@ -97,6 +97,10 @@ static void parse_push_back(ifstream &f, vector<vector<int>> &v, int n, int w) {
 }
 
 static void parse_insert(ifstream &f, unordered_set<string> &v, int n) {
+	if (n == 0) {
+		v.insert("");
+		return;
+	}
 	for (int i = 0; i < n; i++) {
 		string x;
 		f >> x;
