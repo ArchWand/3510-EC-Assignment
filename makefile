@@ -9,16 +9,18 @@ ${BIN}: parsers/cpp/*.cpp parsers/cpp/*.h src/Solutions.cpp
 debug:
 	g++ -std=c++17 -g -o ${BIN} parsers/cpp/run.cpp src/Solutions.cpp -g -fsanitize=address
 
-.PHONY: clean
-clean:
-	rm -f ${BIN} ${JAR} ${JAVADIR}/*.class ${JAVADIR}/${JAR}
+.PHONY: clean cleanjava
+clean: cleanjava
+	rm -f ${BIN}
+cleanjava:
+	rm -f ${JAR} ${JAVADIR}/*.class ${JAVADIR}/${JAR}
 
 .PHONY: jar
 jar: ${JAR}
-run.jar: ${JAVADIR}/run.class
+${JAR}: ${JAVADIR}/run.class
 	cd ${JAVADIR} && jar -cvfe ${JAR} run *.class
 	cp -f ${JAVADIR}/${JAR} .
 
-${JAVADIR}/run.class: ${JAVADIR}/*.java src/Solutions.java
+${JAVADIR}/run.class: ${JAVADIR}/*.java src/Solutions.java cleanjava
 	cd ${JAVADIR} && javac run.java
 
