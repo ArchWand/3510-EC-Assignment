@@ -53,9 +53,15 @@ public class run {
             System.out.println("Testing " + YELLOW + "problem " + BOLD + prob + ENDC);
 
             // Try every test case
-            File[] dir = new File(tests_dir(prob)).listFiles();
-            Arrays.sort(dir);
-            for (File file : dir) {
+            File dir = new File(tests_dir(prob));
+            if (dir.exists() && !dir.isDirectory()) {
+                System.out.println("Could not find directory " + tests_dir(prob));
+                System.exit(1);
+            }
+            File[] dir_list = dir.listFiles();
+            Arrays.sort(dir_list);
+            for (File file : dir_list) {
+                if (file.isDirectory()) { continue; }
                 String test_case = file.getName();
                 // Ignore hidden test cases
                 if (test_case.charAt(0) == '.') { continue; }
