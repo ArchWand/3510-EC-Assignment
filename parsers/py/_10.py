@@ -15,6 +15,8 @@ def parser(f):
     else:
         cert = False
 
+    assert(sum(1 for i in ticket if i == '*') % 2 == 0)
+
     return cert, (n, ticket,)
 
 def verifier(cert, ans):

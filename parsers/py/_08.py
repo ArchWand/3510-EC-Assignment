@@ -9,6 +9,8 @@ def parser(f):
 
     m = int(f.readline())
     cert = set( f.readline().strip() for _ in range(m) )
+    if m == 0:
+        cert.add("")
     for s in cert:
         for c in s:
             assert('a' <= c and c <= 'z')
