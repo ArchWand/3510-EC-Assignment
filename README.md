@@ -10,9 +10,17 @@ Note: print debugging can be useful. If a test case fails, then user print debug
 
 ### Running
 
-These commands should be run from the same directory as this file. Each option also supports the `-h` flag for help text, and the `-t` flag to run tests for only a specific subset of problems. Note that the inputs to `-t` must be zero-padded to be 2 digits since they are directly interpreted as folder names.
+Download this repository by running:
 
-Note that `make` usually does not work on Windows. Please use WSL if you need to use make; otherwise, manually compile in the appropriate `./parsers/*/` directory and move the resulting binary into `./`.
+```
+git clone https://github.com/ArchWand/3510-EC-Assignment
+```
+
+Note that downloading the repository as a zip directly may cause the symbolic link used in `./parsers/java` to break; as such, cloning the repository is advised.
+
+The following commands should be run from the `3510-EC-Assignment` directory. Each option also supports the `-h` flag for help text, and the `-t` flag to run tests for only a specific subset of problems. Note that the inputs to `-t` must be zero-padded to be 2 digits since they are directly interpreted as folder names.
+
+Note that `make` usually does not work on Windows. Please use WSL if you need to use make.
 
 * C++
 
