@@ -33,6 +33,7 @@ public:
 			ss << "Input:\n"
 				<< "energies = " << print_vec(energies) << "\n"
 				<< "edges = " << print_vecvec(edges) << "\n"
+				<< "maxTime = " << maxTime << "\n"
 				<< "\n"
 				<< "Expected:\n"
 				<< cert << "\n"
